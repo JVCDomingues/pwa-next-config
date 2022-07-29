@@ -5,7 +5,7 @@ import { useState, useRef } from 'react';
 const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(false)
   const toast = useToast()
-  const audioRef = useRef<HTMLAudioElement>()
+  const audioRef = useRef<HTMLAudioElement>(null)
 
   async function promise() {
     return new Promise((resolve, reject) => {
