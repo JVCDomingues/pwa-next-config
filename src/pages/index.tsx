@@ -4,6 +4,8 @@ import { useState, useRef } from 'react';
 
 const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const toast = useToast()
   const audioRef = useRef<HTMLAudioElement>(null)
 
@@ -41,10 +43,10 @@ const Home: NextPage = () => {
       >
         <VStack>
           <Text color="gray.100">Enter your credentials</Text>
-          <Input placeholder="Username" color="white" type="text" />
-          <Input placeholder="Password" type="password" color="white" />
+          <Input placeholder="Username" color="white" type="text" value={username} onChange={event => setUsername(event.target.value)}/>
+          <Input placeholder="Password" type="password" color="white" value={password} onChange={event => setPassword(event.target.value)}/>
 
-          <Button colorScheme="twitter" w="full" onClick={login} isLoading={isLoading}>Login</Button>
+          <Button colorScheme="twitter" w="full" onClick={login} isLoading={isLoading} disabled={!username || !password}>Login</Button>
 
         </VStack>
 
