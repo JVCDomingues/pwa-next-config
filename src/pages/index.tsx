@@ -27,7 +27,8 @@ const Home: NextPage = () => {
         isClosable: true,
         duration: 5000
       })
-      audioRef.current?.play()
+      audioRef.current?.play();
+      window.navigator.vibrate([200, 200]);
     }
     setIsLoading(false)
   }
