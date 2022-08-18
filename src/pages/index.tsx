@@ -28,7 +28,7 @@ const Home: NextPage = () => {
         duration: 5000
       })
       audioRef.current?.play();
-      window.navigator.vibrate([200, 200]);
+      window.navigator.vibrate([100,30,100,30,100,30,200,30,200,30,200,30,100,30,100,30,100]);
     }
     setIsLoading(false)
   }
